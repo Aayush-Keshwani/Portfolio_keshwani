@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aayush's Interactive Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="stage" aria-label="Interactive resume of Aayush Keshwani. Scroll down or use the arrow keys to travel through it.">
+
+  <div class="zone z-walk" id="zWalk">
+    <div class="tile mountains" data-par="0.08"></div>
+    <div class="sun"><svg viewBox="0 0 120 120" aria-hidden="true">
+      <g class="spin" fill="#ffc83d" stroke="#14213d" stroke-width="3" stroke-linejoin="round">
+        <polygon points="60,2 68,22 52,22"/><polygon points="60,2 68,22 52,22" transform="rotate(45 60 60)"/>
+        <polygon points="60,2 68,22 52,22" transform="rotate(90 60 60)"/><polygon points="60,2 68,22 52,22" transform="rotate(135 60 60)"/>
+        <polygon points="60,2 68,22 52,22" transform="rotate(180 60 60)"/><polygon points="60,2 68,22 52,22" transform="rotate(225 60 60)"/>
+        <polygon points="60,2 68,22 52,22" transform="rotate(270 60 60)"/><polygon points="60,2 68,22 52,22" transform="rotate(315 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="28" fill="#ffc83d" stroke="#14213d" stroke-width="4"/>
+      <circle cx="50" cy="52" r="6" fill="#ffe28a"/>
+    </svg></div>
+    <div class="tile clouds" data-par="0.15"></div>
+    <div class="tile hills-far" data-par="0.22"></div>
+    <div class="tile hills" data-par="0.38"></div>
+  </div>
+
+  <div class="zone z-water" id="zWater">
+    <div class="rays" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="tile reef" data-par="0.3"></div>
+    <div id="fishLayer"></div>
+    <div id="bubbleLayer"></div>
+  </div>
+
+  <div class="zone z-sky" id="zSky">
+    <div class="tile peaks" data-par="0.1"></div>
+    <div class="tile cloud-b" data-par="0.18"></div>
+    <div class="tile cloud-a" data-par="0.3"></div>
+    <div id="birdLayer"></div>
+    <div class="tile cloudsea" data-par="0.55"></div>
+  </div>
+
+  <div id="wback" class="wlayer" aria-hidden="true">
+    <div class="gseg grass" style="left:0;width:372vw"></div>
+    <div class="pond" id="pond" style="left:372vw;width:62vw"></div>
+    <div class="gseg sand" style="left:434vw;width:356vw"></div>
+  </div>
+
+  <div class="bot m-walk" id="bot" aria-hidden="true">
+    <div class="flip" id="flip">
+      <svg class="rob" viewBox="0 0 48 64">
+        <g class="scarf"><path d="M20 38 L6 34 L10 42 L2 44 L16 46 Z" fill="#ff6b2c" stroke="#14213d" stroke-width="2.5" stroke-linejoin="round"/></g>
+        <rect class="leg leg-l" x="13" y="52" width="9" height="11" fill="#14213d"/>
+        <rect class="leg leg-r" x="26" y="52" width="9" height="11" fill="#14213d"/>
+        <rect class="arm arm-l" x="3" y="40" width="7" height="13" rx="2" fill="#14213d"/>
+        <rect class="arm arm-r" x="38" y="40" width="7" height="13" rx="2" fill="#14213d"/>
+        <rect x="10" y="38" width="28" height="15" rx="3" fill="#ff6b2c" stroke="#14213d" stroke-width="3"/>
+        <circle cx="24" cy="45.5" r="3.2" fill="#ffc83d" stroke="#14213d" stroke-width="2"/>
+        <line x1="24" y1="13" x2="24" y2="5" stroke="#14213d" stroke-width="3"/>
+        <circle cx="24" cy="4" r="3.6" fill="#ff6b2c" stroke="#14213d" stroke-width="2.5"/>
+        <rect x="6" y="12" width="36" height="27" rx="6" fill="#eaf1ff" stroke="#14213d" stroke-width="3"/>
+        <rect x="10" y="17" width="28" height="15" rx="4" fill="#14213d"/>
+        <rect x="15" y="22" width="6" height="6" rx="1.5" fill="#ffc83d"/>
+        <rect x="27" y="22" width="6" height="6" rx="1.5" fill="#ffc83d"/>
+        <rect x="1.5" y="19" width="5" height="9" rx="2" fill="#ff6b2c" stroke="#14213d" stroke-width="2"/>
+        <rect x="41.5" y="19" width="5" height="9" rx="2" fill="#ff6b2c" stroke="#14213d" stroke-width="2"/>
+        <g class="gear">
+          <rect x="8" y="15" width="32" height="19" rx="6" fill="rgba(125,220,255,.4)" stroke="#ffc83d" stroke-width="3"/>
+          <path d="M40 24 L45 24 L45 6" fill="none" stroke="#14213d" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 24 L45 24 L45 6" fill="none" stroke="#ff6b2c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <svg class="balloon" viewBox="0 0 200 300">
+        <path d="M100 8C38 8 14 62 24 106C32 140 66 164 80 180L120 180C134 164 168 140 176 106C186 62 162 8 100 8Z" fill="#ff6b2c" stroke="#14213d" stroke-width="4"/>
+        <path d="M100 8C76 50 70 130 82 180L118 180C130 130 124 50 100 8Z" fill="#ffc83d" stroke="#14213d" stroke-width="3"/>
+        <path d="M100 8C56 40 40 120 66 170M100 8C144 40 160 120 134 170" fill="none" stroke="#14213d" stroke-width="3"/>
+        <text x="100" y="118" text-anchor="middle" font-family="Silkscreen, monospace" font-weight="700" font-size="26" fill="#14213d">AK</text>
+        <rect x="80" y="178" width="40" height="9" fill="#8a5a3c" stroke="#14213d" stroke-width="3"/>
+        <path class="flame" d="M100 190C92 200 96 208 100 215C104 208 108 200 100 190Z" fill="#ffc83d" stroke="#ff6b2c" stroke-width="2"/>
+        <path d="M82 187L80 230M118 187L120 230M100 187L100 230" stroke="#14213d" stroke-width="2.5" fill="none"/>
+        <path d="M78 237L82 272H118L122 237Z" fill="#c98b52" stroke="#14213d" stroke-width="4"/>
+        <path d="M80 247H120M81 257H119M82 266H118" stroke="#14213d" stroke-width="2" opacity=".5"/>
+        <rect x="74" y="228" width="52" height="9" rx="2" fill="#a9693a" stroke="#14213d" stroke-width="4"/>
+      </svg>
+    </div>
+  </div>
+
+  <div id="world" class="wlayer">
+    <!-- Screen 0: intro -->
+    <section class="screen" data-level="Start" data-label="Press start">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Interactive resume of</p>
+        <h1 class="big">Aayush Keshwani</h1>
+        <h2>AI/ML · Data Science · Statistics</h2>
+        <p>Integrated B.Tech + M.Tech student at VIT Vellore, class of 2029. Statistical inference, Python data modeling and technical community leadership.</p>
+        <ul class="tags">
+          <li>Vice Chair, Firefox Club VIT</li>
+          <li>CGPA 9.25</li>
+          <li>Vellore, India</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Level 1: skills -->
+    <section class="screen" data-level="Level 1" data-label="Skills">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 1 · Skills</p>
+        <h2>Languages &amp; web</h2>
+        <div class="skill" data-n="4"><div class="skill-head"><span>Python</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Java</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>C / C++</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>SQL / DBMS</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>HTML / CSS / JavaScript</span><span></span></div></div>
+        <div class="scale" aria-hidden="true"><span>Beginner</span><span>Element.</span><span>Interm.</span><span>Advanced</span><span>Expert</span></div>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 1" data-label="Skills">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 1 · Skills</p>
+        <h2>Build &amp; blockchain</h2>
+        <div class="skill" data-n="2" data-label="Beginner–Intermediate"><div class="skill-head"><span>React</span><span></span></div></div>
+        <div class="skill" data-n="2" data-label="Beginner–Intermediate"><div class="skill-head"><span>Node.js</span><span></span></div></div>
+        <div class="skill" data-n="2" data-label="Beginner–Intermediate"><div class="skill-head"><span>Docker</span><span></span></div></div>
+        <div class="skill" data-n="1"><div class="skill-head"><span>Solidity</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Hyperledger Fabric</span><span></span></div></div>
+        <div class="scale" aria-hidden="true"><span>Beginner</span><span>Element.</span><span>Interm.</span><span>Advanced</span><span>Expert</span></div>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 1" data-label="Skills">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 1 · Skills</p>
+        <h2>Core CS &amp; ML</h2>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Machine learning</span><span></span></div></div>
+        <div class="skill" data-n="4"><div class="skill-head"><span>Git / GitHub</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Computer networks</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Operating systems</span><span></span></div></div>
+        <div class="skill" data-n="3"><div class="skill-head"><span>Data structures &amp; algorithms</span><span></span></div></div>
+        <div class="scale" aria-hidden="true"><span>Beginner</span><span>Element.</span><span>Interm.</span><span>Advanced</span><span>Expert</span></div>
+      </div>
+    </section>
+
+    <!-- Level 2: education -->
+    <section class="screen" data-level="Level 2" data-label="Education">
+      <div class="stack">
+        <div class="card">
+          <p class="kicker" style="margin-top:0">Level 2 · Education</p>
+          <h3>Vellore Institute of Technology</h3>
+          <p class="meta">2024 – 2029 · Vellore, India</p>
+          <p>Integrated B.Tech + M.Tech in Computer Science &amp; Engineering. Modules: Advanced Statistics, Data Structures &amp; Algorithms, Machine Learning, DBMS.</p>
+          <ul class="tags"><li>CGPA 9.25</li></ul>
+        </div>
+        <div class="card">
+          <h3>Nirmala Convent High School</h3>
+          <p class="meta">CBSE · 2022 – 2024</p>
+          <ul class="tags"><li>Class XII 97.00%</li><li>Class X 96.00%</li><li>District rank 1 · AISSCE</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level 3: experience -->
+    <section class="screen" data-level="Level 3" data-label="Experience">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 3 · Experience 1</p>
+        <h2>Mozilla Firefox Club VIT</h2>
+        <p class="meta">Vice Chair · Mar 2025 – Present</p>
+        <ul class="pts">
+          <li>Directs strategy for a technical club of 100+ student developers.</li>
+          <li>Led Playnamics and CodeXcape at Gravitas 2025.</li>
+          <li>Runs open-source workshops on web standards.</li>
+        </ul>
+        <ul class="tags"><li>+40% participation</li></ul>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 3" data-label="Experience">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 3 · Experience 2</p>
+        <h2>Hindalco Industries Limited</h2>
+        <p class="meta">Summer intern · Jun – Jul 2025 · Uttar Pradesh</p>
+        <ul class="pts">
+          <li>Improved process efficiency by analyzing large manufacturing datasets.</li>
+          <li>Set data documentation standards that sped up safety reporting.</li>
+          <li>Worked with engineering teams on digital plant monitoring.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 3" data-label="Experience">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 3 · Experience 3</p>
+        <h2>TAM-VIT</h2>
+        <p class="meta">Junior core · AI/ML domain · Feb 2025 – Present</p>
+        <ul class="pts">
+          <li>Builds predictive models in Python with a focus on accuracy and clean preprocessing.</li>
+          <li>Takes part in domain research on scalable ML algorithms.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Level 4: projects -->
+    <section class="screen" data-level="Level 4" data-label="Projects">
+      <div class="stack">
+        <div class="card">
+          <p class="kicker" style="margin-top:0">Level 4 · Projects</p>
+          <h3>Biomarker Data &amp; Feature Selection Pipeline</h3>
+          <p>Finds significant variables in high-dimensional datasets.</p>
+          <ul class="tags"><li>Python</li><li>Pandas</li><li>Scikit-Learn</li><li>−20% complexity</li><li>95% accuracy</li></ul>
+        </div>
+        <div class="card">
+          <h3>Missingness Recovery &amp; AI/ML Modeling</h3>
+          <p>A data pipeline that imputes missing values in real-world datasets, validated with statistical inference.</p>
+          <ul class="tags"><li>R</li><li>Python</li><li>Matplotlib</li></ul>
+        </div>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 4" data-label="Projects">
+      <div class="stack">
+        <div class="card">
+          <p class="kicker" style="margin-top:0">Level 4 · Featured</p>
+          <h3><a href="https://github.com/Aayush-Keshwani/bkt_ephemeral" target="_blank" rel="noopener">bkt_ephemeral</a></h3>
+          <p>Featured repository. Code and details are on GitHub.</p>
+          <ul class="tags"><li>GitHub</li></ul>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/Aayush-Keshwani/AI-final-interview" target="_blank" rel="noopener">AI-final-interview</a></h3>
+          <p>An interview preparation platform for AI-driven technical assessments.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>React</li></ul>
+        </div>
+      </div>
+    </section>
+    <section class="screen" data-level="Level 4" data-label="Projects">
+      <div class="stack">
+        <div class="card">
+          <p class="kicker" style="margin-top:0">Level 4 · From GitHub</p>
+          <h3><a href="https://github.com/Aayush-Keshwani/Cancer-Prediction-ml" target="_blank" rel="noopener">Cancer-Prediction-ml</a></h3>
+          <p>SVM and Random Forest models with hyperparameter tuning for medical prediction.</p>
+          <ul class="tags"><li>Jupyter</li><li>SVM</li><li>Random Forest</li></ul>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/Aayush-Keshwani/cpu-pipeline-sim" target="_blank" rel="noopener">cpu-pipeline-sim</a></h3>
+          <p>An educational CPU simulator with a 5-stage pipeline, assembler, hazard detection and matplotlib visuals.</p>
+          <ul class="tags"><li>Python</li><li>Matplotlib</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level 5: wins -->
+    <section class="screen" data-level="Level 5" data-label="Wins">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 5 · Wins</p>
+        <h2>Trophies unlocked</h2>
+        <div class="coins">
+          <div class="coin"><i></i><div><b>Winner</b><span>Global Idea Roulette · startup pitch ideathon · Vibrance 2026, VIT Chennai</span></div></div>
+          <div class="coin"><i></i><div><b>Winner</b><span>ByteQuest hackathon · Gravitas</span></div></div>
+          <div class="coin"><i></i><div><b>District rank 1</b><span>AISSCE, Class XII · 97%</span></div></div>
+          <div class="coin"><i></i><div><b>Vice Chair</b><span>Mozilla Firefox Club VIT</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level 6: certifications -->
+    <section class="screen" data-level="Level 6" data-label="Certifications">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 6 · Certifications</p>
+        <h2>Coins collected</h2>
+        <div class="coins">
+          <div class="coin"><i></i><div><b>Data Analytics Professional Certificate</b><span>Google / Coursera</span></div></div>
+          <div class="coin"><i></i><div><b>Google Analytics Certification</b><span>Google · 2024</span></div></div>
+          <div class="coin"><i></i><div><b>Python (Basic)</b><span>HackerRank</span></div></div>
+          <div class="coin"><i></i><div><b>Technology Consulting Virtual Internship</b><span>Deloitte · Forage · 2021</span></div></div>
+          <div class="coin"><i></i><div><b>Introduction to Internet of Things</b><span>Stanford CPD · 2021</span></div></div>
+          <div class="coin"><i></i><div><b>Investment Banking</b><span>J.P. Morgan</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level 6: contact -->
+    <section class="screen" data-level="Level 7" data-label="Contact">
+      <div class="card">
+        <p class="kicker" style="margin-top:0">Level 7 · Game clear</p>
+        <h2>Thanks for playing</h2>
+        <p>Let's talk about AI/ML, data science or open source.</p>
+        <div id="contacts"></div>
+        <button class="btn" id="replay" type="button">Play again</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="hud">
+    <div class="hud-row">
+      <div class="chip" id="level">Start</div>
+      <div class="chip" id="xp">XP 0000</div>
+    </div>
+    <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+  </div>
+  <div class="hint" id="hint"><span>Scroll down, press an arrow key, or swipe</span></div>
+</div>
+<div id="spacer"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
